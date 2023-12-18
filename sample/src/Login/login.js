@@ -7,11 +7,12 @@ import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import Link from "@mui/material/Link"
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { Container } from "@mui/material";
+import { Container, Paper } from "@mui/material";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
+import Stack from '@mui/material/Stack';
 
 const defaultTheme = createTheme();
 const Login = () => {
@@ -38,9 +39,24 @@ const Login = () => {
 
   return (
     <ThemeProvider theme={defaultTheme}>
-      <Container>
+<Stack direction="column" horizontalAlign="center" verticalAlign="center">
+  <Container>
+    <Paper>
+<Box>
+  fdsfs
+</Box>
+<Box>
+  fdsfs
+</Box>
+<Box>
+  fdsfs
+</Box>
+    </Paper>
         <Box
           sx={{
+            justifyContent:"center",
+          alignItems:"center",
+            bgcolor:'red',
             marginTop: 8,
             display: "flex",
             flexDirection: "column",
@@ -88,7 +104,7 @@ const Login = () => {
               <Button
                 type="submit"
                 fullWidth
-                variant={isFormValid ? "contained" : "outlined"}
+                variant={isFormValid ? "contained" : "disabled"}
                 color="primary"
                 sx={{ mt: 3, mb: 2 }}
                 disabled={!isFormValid}
@@ -110,7 +126,10 @@ const Login = () => {
             </Grid>
           </Box>
         </Box>
-      </Container>
+  </Container>
+
+</Stack>
+      
     </ThemeProvider>
   );
 };
