@@ -4,11 +4,15 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Login from './Login/login';
+// import Dashboard from './components/Dashboard';
+import Navbar from './components/Navbar';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Login />
+    {/* <Login /> */}
+    {/* <Dashboard/> */}
+    <Navbar/>
   </React.StrictMode>
 );
 

@@ -7,11 +7,12 @@ import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import Link from "@mui/material/Link"
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { Container } from "@mui/material";
+import { Container, Paper } from "@mui/material";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
+import Stack from '@mui/material/Stack';
 
 const defaultTheme = createTheme();
 const Login = () => {
@@ -39,18 +40,15 @@ console.log("ionside the onsubmit")
 
   return (
     <ThemeProvider theme={defaultTheme}>
-      <Container >
-      <Box
-      sx={{
-        marginTop: { xs: 20, sm: 20, md: 8,  }, // Responsive marginTop
-        marginBottom: { xs: 4, sm: 6, md: 8, lg: 10 }, // Responsive marginBottom
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        width: { xs: '90%', sm: '70%', md: '50%', lg: '40%' }, // Responsive width
-        mx: 'auto', // Center the box horizontally
-      }}
-    >
+      <Container>
+        <Box
+          sx={{
+            marginTop: 8,
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+          }}
+        >
           <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
             <LockOutlinedIcon />
           </Avatar>
@@ -92,7 +90,7 @@ console.log("ionside the onsubmit")
               <Button
                 type="submit"
                 fullWidth
-                variant={isFormValid ? "contained" : "outlined"}
+                variant={isFormValid ? "contained" : "disabled"}
                 color="primary"
                 sx={{ mt: 3, mb: 2 }}
                 disabled={!isFormValid }
@@ -114,7 +112,10 @@ console.log("ionside the onsubmit")
             </Grid>
           </Box>
         </Box>
-      </Container>
+  </Container>
+
+</Stack>
+      
     </ThemeProvider>
   );
 };
