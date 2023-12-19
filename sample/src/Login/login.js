@@ -1,5 +1,5 @@
 // Inside your Login component
-import React, { useState }  from "react";
+
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useForm } from "react-hook-form";
 import MuiTextField from "../components/common/MuiTextField";
@@ -7,16 +7,17 @@ import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import Link from "@mui/material/Link"
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { Container, Paper } from "@mui/material";
+import { Container } from "@mui/material";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-import Stack from '@mui/material/Stack';
+import {  useNavigate } from "react-router-dom";
+
 
 const defaultTheme = createTheme();
 const Login = () => {
-
+  const navigate = useNavigate()
   const {
     register,
     handleSubmit,
@@ -33,6 +34,8 @@ console.log("ionside the onsubmit")
 
     // Now formData contains email and password
     console.log("Form Data:", formData);
+    navigate('/home')
+
     // You can proceed to send this data to the server or perform other actions.
   };
 
@@ -114,8 +117,7 @@ console.log("ionside the onsubmit")
         </Box>
   </Container>
 
-</Stack>
-      
+
     </ThemeProvider>
   );
 };
