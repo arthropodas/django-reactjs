@@ -1,5 +1,5 @@
 // Inside your Login component
-import React  from "react";
+import React, { useState }  from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useForm } from "react-hook-form";
 import MuiTextField from "../components/common/MuiTextField";
@@ -15,6 +15,7 @@ import Typography from "@mui/material/Typography";
 
 const defaultTheme = createTheme();
 const Login = () => {
+
   const {
     register,
     handleSubmit,
@@ -22,8 +23,8 @@ const Login = () => {
   } = useForm({ mode: "onChange" });
 
   const onSubmit = (data, event) => {
-    event.preventDefault(); // Prevent the default form submission behavior
-
+    event.preventDefault(); 
+console.log("ionside the onsubmit")
     const formData = {
       email: data.email,
       password: data.password,
@@ -38,15 +39,18 @@ const Login = () => {
 
   return (
     <ThemeProvider theme={defaultTheme}>
-      <Container>
-        <Box
-          sx={{
-            marginTop: 8,
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-          }}
-        >
+      <Container >
+      <Box
+      sx={{
+        marginTop: { xs: 20, sm: 20, md: 8,  }, // Responsive marginTop
+        marginBottom: { xs: 4, sm: 6, md: 8, lg: 10 }, // Responsive marginBottom
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        width: { xs: '90%', sm: '70%', md: '50%', lg: '40%' }, // Responsive width
+        mx: 'auto', // Center the box horizontally
+      }}
+    >
           <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
             <LockOutlinedIcon />
           </Avatar>
@@ -56,13 +60,12 @@ const Login = () => {
           </Typography>
 
           <Box
-            component="form"
-            onSubmit={handleSubmit}
-            noValidate
-            sx={{ mt: 1 }}
+            
           >
             <form onSubmit={handleSubmit(onSubmit)}>
               <MuiTextField
+            
+                data-testid = "email"
                 label="Email"
                 error={!!errors.email}
                 helperText={
@@ -75,6 +78,7 @@ const Login = () => {
               />
 
               <MuiTextField
+              data-testid = "password"
                 label="Password"
                 type={"password"}
                 error={!!errors.password}
@@ -91,7 +95,7 @@ const Login = () => {
                 variant={isFormValid ? "contained" : "outlined"}
                 color="primary"
                 sx={{ mt: 3, mb: 2 }}
-                disabled={!isFormValid}
+                disabled={!isFormValid }
               >
                 Sign In
               </Button>
