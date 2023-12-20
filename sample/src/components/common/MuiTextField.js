@@ -4,18 +4,16 @@ import React from "react";
 const MuiTextField = ({ registerProps, error, value, ...otherProps }) => {
   return (
     <TextField
-    margin="normal"
-    required
-    fullWidth
+      margin="normal"
+      required
+      fullWidth
+      
       {...registerProps}
       error={!!error}
       helperText={error}
-      
       {...otherProps}
       value={value}
-    >
-      
-    </TextField>
+    ></TextField>
   );
 };
 

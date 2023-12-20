@@ -6,13 +6,15 @@ import reportWebVitals from './reportWebVitals';
 import Login from './Login/login';
 // import Dashboard from './components/Dashboard';
 import Navbar from './components/Navbar';
+import WebSocketComponent from './components/WebSocketComponent';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+<WebSocketComponent/>
     {/* <Login /> */}
     {/* <Dashboard/> */}
-    <Navbar/>
+    {/* <Navbar/> */}
   </React.StrictMode>
 );
 

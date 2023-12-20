@@ -1,22 +1,20 @@
 // Inside your Login component
-import React, { useState }  from "react";
+import React  from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useForm } from "react-hook-form";
 import MuiTextField from "../components/common/MuiTextField";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
-import Link from "@mui/material/Link"
+import Link from "@mui/material/Link";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { Container, Paper } from "@mui/material";
+import { Container,  } from "@mui/material";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-import Stack from '@mui/material/Stack';
 
 const defaultTheme = createTheme();
 const Login = () => {
-
   const {
     register,
     handleSubmit,
@@ -24,15 +22,17 @@ const Login = () => {
   } = useForm({ mode: "onChange" });
 
   const onSubmit = (data, event) => {
-    event.preventDefault(); 
-console.log("ionside the onsubmit")
+  
+ 
     const formData = {
       email: data.email,
       password: data.password,
     };
 
+
+
     // Now formData contains email and password
-    console.log("Form Data:", formData);
+   
     // You can proceed to send this data to the server or perform other actions.
   };
 
@@ -57,13 +57,12 @@ console.log("ionside the onsubmit")
             Sign in
           </Typography>
 
-          <Box
-            
-          >
-            <form onSubmit={handleSubmit(onSubmit)}>
+          <Box>
+            <form onSubmit={handleSubmit(onSubmit)} data-testid = 'login-form'>
               <MuiTextField
-            
-                data-testid = "email"
+                inputProps={{
+                  "data-testid": "email",
+                }}
                 label="Email"
                 error={!!errors.email}
                 helperText={
@@ -76,14 +75,18 @@ console.log("ionside the onsubmit")
               />
 
               <MuiTextField
-              data-testid = "password"
+               inputProps={{
+                "data-testid": "password",
+              }}
+              
                 label="Password"
                 type={"password"}
                 error={!!errors.password}
-                helperText={errors.password && "Please enter a password."}
+                helperText={errors.password && "Please enter a valid password."}
                 registerProps={register("password", {
                   required: true,
-                  maxLength: 20,
+                  minLength: 8, 
+                  
                 })}
               />
 
@@ -93,7 +96,7 @@ console.log("ionside the onsubmit")
                 variant={isFormValid ? "contained" : "disabled"}
                 color="primary"
                 sx={{ mt: 3, mb: 2 }}
-                disabled={!isFormValid }
+                disabled={!isFormValid}
               >
                 Sign In
               </Button>
@@ -112,10 +115,7 @@ console.log("ionside the onsubmit")
             </Grid>
           </Box>
         </Box>
-  </Container>
-
-</Stack>
-      
+      </Container>
     </ThemeProvider>
   );
 };
