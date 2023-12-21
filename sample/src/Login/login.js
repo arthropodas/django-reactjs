@@ -12,9 +12,13 @@ import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
+import { useNavigate } from "react-router-dom";
+
 
 const defaultTheme = createTheme();
+
 const Login = () => {
+  const navigate = useNavigate()
   const {
     register,
     handleSubmit,
@@ -30,7 +34,7 @@ const Login = () => {
     };
 
 
-
+   navigate('/home')
     // Now formData contains email and password
    
     // You can proceed to send this data to the server or perform other actions.
@@ -59,20 +63,8 @@ const Login = () => {
 
           <Box>
             <form onSubmit={handleSubmit(onSubmit)} data-testid = 'login-form'>
-              <MuiTextField
-                inputProps={{
-                  "data-testid": "email",
-                }}
-                label="Email"
-                error={!!errors.email}
-                helperText={
-                  errors.email && "Please enter a valid email address."
-                }
-                registerProps={register("email", {
-                  required: true,
-                  pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-                })}
-              />
+             tur31
+
 
               <MuiTextField
                inputProps={{
@@ -115,7 +107,9 @@ const Login = () => {
             </Grid>
           </Box>
         </Box>
-      </Container>
+  </Container>
+
+
     </ThemeProvider>
   );
 };
