@@ -7,7 +7,7 @@ const MuiTextField = ({ registerProps, error, value, ...otherProps }) => {
       margin="normal"
       required
       fullWidth
-      
+
       {...registerProps}
       error={!!error}
       helperText={error}
