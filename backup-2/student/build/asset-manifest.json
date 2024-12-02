@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/static/css/main.a5403280.css",
+    "main.js": "/static/js/main.f9483f9d.js",
+    "static/js/453.419a5d54.chunk.js": "/static/js/453.419a5d54.chunk.js",
+    "static/media/reg_vector.png": "/static/media/reg_vector.4c50e710cbd6c4b8c5d4.png",
+    "static/media/thanks.png": "/static/media/thanks.14d492295aaab7c33993.png",
+    "static/media/termination.png": "/static/media/termination.8af45d4051f4b4068397.png",
+    "static/media/innov_logo.png": "/static/media/innov_logo.4e2e0d2049014aa4db6c.png",
+    "index.html": "/index.html",
+    "main.a5403280.css.map": "/static/css/main.a5403280.css.map",
+    "main.f9483f9d.js.map": "/static/js/main.f9483f9d.js.map",
+    "453.419a5d54.chunk.js.map": "/static/js/453.419a5d54.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a5403280.css",
+    "static/js/main.f9483f9d.js"
+  ]
+}
