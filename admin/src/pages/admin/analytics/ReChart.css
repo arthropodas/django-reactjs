@@ -1,0 +1,15 @@
+.input {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    width: 95px;
+    height: 34px;
+    text-align: center;
+    border-radius: 5px;
+    border: none !important;
+    caret-color: transparent;
+    cursor: pointer;
+  }
